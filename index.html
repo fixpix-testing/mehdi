@@ -54,6 +54,10 @@
         setTimeout(function() {
           $("body").css("overflow", "auto");
         }, 100);
+		  setTimeout(function(){
+			  $("video").get(0).play();
+		  }, 1200);
+
       });
     </script>
     <header class="header" id="top">
@@ -91,7 +95,7 @@
             <div class="button button--header"><a href="#">Train Online</a></div>
           </div>
         </div>
-        <video playsInline loop autoplay="true" muted="muted" muted poster="res/img/poster.jpg" preload>
+        <video playsInline loop muted="muted" muted poster="res/img/poster.jpg" preload>
 			  <source src="res/img/video-mehdi.mp4" type="video/mp4" media="only screen and (min-device-width: 768px)"></source>
 			  <source src="res/img/video-mehdi-mobile.mp4" type="video/mp4" media="only screen and (max-device-width: 768px)"></source>
 		  </video>
