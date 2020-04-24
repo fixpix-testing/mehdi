@@ -1,25 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
-
-@fixpix-testing
-w3c
-/
-IntersectionObserver
-13.4k
-118
-2.9k453
- Code Issues 108 Pull requests 25 Actions Projects 1 Wiki Security 0 Insights
-IntersectionObserver/polyfill/intersection-observer.js /
-@dvoytenko dvoytenko Clarified meaning of ensureDOMRect and updated types
-9c16fd7 yesterday
-@philipwalton@dvoytenko@shvaikalesh@pottedmeat@sillero@Ornhoj@ShakMR@szager-chromium@robwalch@robinwhittleton@restrry@marcoscaceres@JSteunou@Suiret@ericperez@nostalgicdodo@exunreal
-981 lines (847 sloc)  29.1 KB
-
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
