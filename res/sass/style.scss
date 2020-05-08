@@ -74,10 +74,12 @@ a {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+	 position: relative;
     & video {
       object-fit: cover;
       width: 100%;
       height: 100%;
+		font-family: 'object-fit: cover;';
     }
   }
   &__mobile {
@@ -141,7 +143,7 @@ a {
     color: #fff;
     z-index: 2;
     text-align: center;
-    width: 100%;
+	 min-width: 100%;
     h1 {
       font-weight: 400;
       position: relative;
@@ -159,9 +161,11 @@ a {
     position: absolute;
     left: 50%;
     top: 43%;
-    transform: translate(-43%, -50%) scale(1.6);
+    transform: translate(-50%, -50%) scale(1.6);
+	 z-index: 2000;
     img {
       width: 160px;
+			 z-index: 2000;
     }
   }
   .nav {
@@ -212,25 +216,54 @@ a {
   &__buttons {
     display: flex;
     justify-content: center;
+	 @media (max-width: $m) {
+		flex-direction: column;
+	 }
   }
-  &__button {
-    margin: 30px 10px;
-    display: block;
-    & a {
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 18px;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      padding: 10px 20px;
-      transition: 0.5s;
-      &:hover {
-        background-color: #fff;
-        color: #000;
-        transition: 0.5s;
-      }
-    }
-  }
+}
+
+@keyframes test{
+	from {
+		transform: scale(0.9);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes center{
+	from{
+		transform: translateY(-20%);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes mobile-left{
+	from{
+		transform: translateX(-20%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes mobile-right{
+	from{
+		transform: translateX(20%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 .pakette {
@@ -263,10 +296,11 @@ a {
     }
   }
   &__item {
+	 opacity: 0;
     color: #fff;
     width: 33.33%;
     margin: 0 30px;
-    padding: 20px 30px;
+    padding: 0 0px 20px;
     background-color: #292929;
     border-radius: 15px;
     display: flex;
@@ -277,7 +311,7 @@ a {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15);
     @media (max-width: $t) {
       width: 60%;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
     @media (max-width: $m) {
       width: 100%;
@@ -289,8 +323,13 @@ a {
     }
     h2 {
       text-align: center;
-      font-size: 22px;
+      font-size: 26px;
     }
+	 img{
+		 margin-bottom: 20px;
+	 	 height: 300px;
+	 	 object-fit: cover;
+	 }
     ul {
       padding: 15px;
       i {
@@ -308,13 +347,12 @@ a {
       border-radius: 5px;
       padding: 10px 30px;
       text-align: center;
-      font-size: 20px;
+      font-size: 16px;
       text-transform: uppercase;
       color: #fff;
       text-align: center;
       box-sizing: border-box;
-      display: block;
-      width: 70%;
+      display: inline-block;
       margin: 0 auto;
     }
   }
@@ -335,7 +373,7 @@ a {
     }
   }
   &__button {
-    padding-top: 30px;
+    padding-top: 20px;
     margin-top: auto;
     text-align: center;
   }
@@ -391,6 +429,7 @@ a {
     }
   }
   &__content {
+	  opacity: 0;
     color: #fff;
     position: relative;
     width: 45%;
@@ -558,23 +597,24 @@ a {
 }
 
 .twocolumns {
+	opacity: 0;
   h2 {
     color: #fff;
     text-align: center;
     padding: 10px 0 40px;
     font-size: 46px;
+	 text-align: left;
   }
   p {
     color: #fff;
   }
   &__wrapper {
-    background-image: url(../img/mehdi3.jpg);
+    background-image: url(../img/ubermich-background.jpg);
     background-size: cover;
     height: 600px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
     position: relative;
     flex-direction: column;
     &:before {
@@ -584,7 +624,7 @@ a {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
   &__item {
@@ -595,6 +635,9 @@ a {
     img {
       width: 100%;
     }
+	 p{
+		 text-align: left;
+	 }
   }
   &__button {
     margin: 50px 10px;
@@ -791,6 +834,8 @@ a {
   }
 }
 
+
+
 @keyframes slide {
   0% {
     transform: translateY(0);
@@ -894,7 +939,7 @@ a {
 }
 
 .pace-running > :not(.pace, .preloader) {
-  opacity: 0;
+
 }
 
 .test {
@@ -930,6 +975,7 @@ a {
   border-radius: 0.5rem;
   color: #000;
   line-height: 1.2;
+   overflow: auto;
 }
 .close-button {
   float: right;
@@ -1117,4 +1163,61 @@ body::-webkit-scrollbar-thumb
 
 .active-top{
 	opacity: 1;
+}
+
+.button {
+  margin: 30px 10px;
+  display: block;
+  @media (max-width: $m) {
+	 margin: 20px 0px;
+  }
+  &:first-child{
+	  margin-top: 30px;
+  }
+  & a {
+	 color: #fff;
+	 text-transform: uppercase;
+	 font-size: 18px;
+	 border: 1px solid #fff;
+	 border-radius: 5px;
+	 padding: 10px 20px;
+	 transition: 0.5s;
+	 &:hover {
+		background-color: #fff;
+		color: #000;
+		transition: 0.5s;
+	 }
+  }
+  &--header{
+	  @media (max-width: $m) {
+		 margin: 10px 0px;
+	  }
+	  a{
+		  @media (max-width: $m) {
+   		 display: inline-block;
+   		 min-width: 200px;
+   		 margin: 0 auto;
+   	 }
+	  }
+  }
+}
+
+.modal-more{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, .9);
+	z-index: 1000;
+	p{
+		color: white;
+	}
+}
+.modal-on{
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
